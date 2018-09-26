@@ -3,4 +3,11 @@
     <string name="app_name">AndroidLabs</string>
     <string name="hello_message">Namaste!</string>
     <string name="ButtonText">I\'m a button</string>
+    <string name="login_text">likho</string>
+    <string name="login_hint">kya naam</string>
+    <string name="password_text">tijori khol</string>
+    <string name="password_hint">jaldi daal</string>
+    <string name="switch_text">yeh kya karega</string>
+    <string name="radioButton">dhakkam</string>
+    <string name="checkBox">ticka maar</string>
 </resources>
