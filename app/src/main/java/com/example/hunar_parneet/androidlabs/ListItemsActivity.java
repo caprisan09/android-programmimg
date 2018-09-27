@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -18,6 +19,8 @@ public class ListItemsActivity extends Activity {
 
     protected static final String ACTIVITY_NAME = "ListItemsActivity";
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    protected ImageButton imgButton;
+    protected Switch toggleSwitch;
 
 
 
@@ -27,7 +30,7 @@ public class ListItemsActivity extends Activity {
         setContentView(R.layout.activity_list_items);
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        final ImageButton imgButton = (ImageButton)findViewById(R.id.camera);
+        imgButton = (ImageButton)findViewById(R.id.camera);
         imgButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -35,17 +38,26 @@ public class ListItemsActivity extends Activity {
 
                 Log.i(ACTIVITY_NAME,"Image button is clicked");
             }});
-        final Switch toggleSwitch = (Switch)findViewById(R.id.toggleSwitch);
-        toggleSwitch.setOnCheckedChangeListener((new View.OnClickListener() {
-            public void onClick(View v){
+        toggleSwitch = (Switch)findViewById(R.id.toggleSwitch);
+        toggleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
             Context context = getApplicationContext();
-            CharSequence text = "Hello toast!";
+            if(isChecked==true){
+
+            CharSequence text = "Switch is ON!";
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
+            toast.show();}else{
+                CharSequence text = "Switch is OFF!";
+                int duration = Toast.LENGTH_LONG;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
             Log.i(ACTIVITY_NAME, "Switch position changed");
         }});
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -53,7 +65,7 @@ public class ListItemsActivity extends Activity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            camera.setImageBitmap(imageBitmap);
+            imgButton.setImageBitmap(imageBitmap);
         }
         if(requestCode==1){
             Log.i(ACTIVITY_NAME, "Returned to Startactivity.onActivityResult");
