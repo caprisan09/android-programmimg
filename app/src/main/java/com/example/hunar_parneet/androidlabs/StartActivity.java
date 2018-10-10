@@ -27,12 +27,21 @@ public class StartActivity extends Activity {
                 startActivityForResult(intent,50);
                 Log.i(ACTIVITY_NAME,"I am a button is clicked");
             }});
+        final Button chatButton = (Button)findViewById(R.id.chatBtn);
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat button");
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if((requestCode==50)&&(Activity.RESULT_OK==-1)){
+        if((requestCode==50)&&(resultCode==Activity.RESULT_OK)){
             String messagePassed = data.getStringExtra("Response");
             Context context = getApplicationContext();
             CharSequence text = "Switch is OFF!";

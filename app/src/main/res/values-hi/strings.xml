@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
     <string name="hello_message">Namaste!</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonText">mujhe dabao!</string>
     <string name="login_text">likho</string>
     <string name="login_hint">kya naam</string>
     <string name="password_text">tijori khol</string>
@@ -10,4 +10,10 @@
     <string name="switch_text">yeh kya karega</string>
     <string name="radioButton">dhakkam</string>
     <string name="checkBox">ticka maar</string>
+    <string name="btnText">Bhokna Shuru Kar</string>
+    <string name="dialog_message">Kya aap yeh activity khatam karna hai?</string>
+    <string name="dialog_title">apna chunao karo</string>
+    <string name="ok">main raazi hoon</string>
+    <string name="cancel">barkhast karo</string>
+    <string name="sendText">jaldi bhejo</string>
 </resources>

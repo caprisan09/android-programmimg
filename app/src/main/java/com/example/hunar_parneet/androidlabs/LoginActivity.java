@@ -43,14 +43,6 @@ public class LoginActivity extends Activity {
 
         mEmailView = (EditText) findViewById(R.id.email);
 
-        //get handle to shared preferences
-
-
-        //write to shared preferences
-
-
-        //read from shared preferences
-
        mEmailView.setText(sharedPref.getString("DefaultEmail", "none@none.com"));
     }
     @Override

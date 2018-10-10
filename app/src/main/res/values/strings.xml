@@ -13,4 +13,6 @@
     <string name="dialog_title">Make a selection</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="btnText">Start Chat</string>
+    <string name="sendText">Send</string>
 </resources>
