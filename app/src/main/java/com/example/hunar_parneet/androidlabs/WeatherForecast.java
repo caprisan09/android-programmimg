@@ -68,6 +68,7 @@ public class WeatherForecast extends Activity {
             }
         }
     }
+
     public static Bitmap getImage(String urlString) {
         try {
             URL url = new URL(urlString);
@@ -82,6 +83,7 @@ public class WeatherForecast extends Activity {
         File file = getBaseContext().getFileStreamPath(fname);
         return file.exists();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,17 +113,17 @@ public class WeatherForecast extends Activity {
             try {
                 url = new URL("http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=d99666875e0e51521f0040a3d97d0f6a&mode=xml&units=metric");
 
-            HttpURLConnection conn = null;
+                HttpURLConnection conn = null;
 
                 conn = (HttpURLConnection) url.openConnection();
 
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(15000 /* milliseconds */);
+                conn.setReadTimeout(10000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
 
                 conn.setRequestMethod("GET");
 
-            conn.setDoInput(true);
-            // Starts the query
+                conn.setDoInput(true);
+                // Starts the query
 
                 conn.connect();
 
@@ -132,7 +134,7 @@ public class WeatherForecast extends Activity {
                 while (xpp.next() != XmlPullParser.END_DOCUMENT) {
                     if (xpp.getEventType() == XmlPullParser.START_TAG) {
 
-String name = xpp.getName();
+                        String name = xpp.getName();
                         if (name.equals("temperature")) {
                             currentTemp = xpp.getAttributeValue(null, "value");
 
@@ -141,29 +143,30 @@ String name = xpp.getName();
                             maxTemp = xpp.getAttributeValue(null, "max");
                             publishProgress(25);
 
-                        } else if (xpp.getName().equals("speed") ){
+                        } else if (xpp.getName().equals("speed")) {
                             windSpeed = xpp.getAttributeValue(null, "value");
                             publishProgress(50);
-                        } else if (xpp.getName().equals("weather") ){
+                        } else if (xpp.getName().equals("weather")) {
                             publishProgress(75);
                             iconName = xpp.getAttributeValue(null, "icon");
-                                if(fileExist(iconName+".png"))
-                                {
-                                    FileInputStream fis = null;
-                                    Log.i(ACTIVITY_NAME,"Filename: "+iconName+" exists");
-                                    try {    fis = openFileInput(iconName+".png");   }
-                                    catch (FileNotFoundException e) {    e.printStackTrace();  }
-                                    picture  = BitmapFactory.decodeStream(fis);
+                            if (fileExist(iconName + ".png")) {
+                                FileInputStream fis = null;
+                                Log.i(ACTIVITY_NAME, "Filename: " + iconName + " exists");
+                                try {
+                                    fis = openFileInput(iconName + ".png");
+                                } catch (FileNotFoundException e) {
+                                    e.printStackTrace();
                                 }
-                                else {
-                                    picture = getImage("http://openweathermap.org/img/w/" + iconName + ".png");
-                                    //save picture:
-                                    FileOutputStream outputStream = openFileOutput( iconName + ".png", Context.MODE_PRIVATE);
-                                    picture.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
-                                    outputStream.flush();
-                                    outputStream.close();
-
-                                }
+                                picture = BitmapFactory.decodeStream(fis);
+                            } else {
+                                picture = getImage("http://openweathermap.org/img/w/" + iconName + ".png");
+                                //save picture:
+                                FileOutputStream outputStream = openFileOutput(iconName + ".png", Context.MODE_PRIVATE);
+                                picture.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
+                                outputStream.flush();
+                                outputStream.close();
+                                Log.i(ACTIVITY_NAME,"File not Found");
+                            }
 
                         }
                     }
@@ -180,10 +183,10 @@ String name = xpp.getName();
         protected void onProgressUpdate(Integer... value) {
             pBar.setVisibility(View.VISIBLE);
             pBar.setProgress(value[0]);
-            currTem.setText("Current Temp: "+currentTemp);
-            minTem.setText("Minimum Temp: "+minTemp);
-            maxTem.setText("Maximum Temp: "+maxTemp);
-            winSpeed.setText("Wind speed: "+windSpeed);
+            currTem.setText("Current Temp: " + currentTemp);
+            minTem.setText("Minimum Temp: " + minTemp);
+            maxTem.setText("Maximum Temp: " + maxTemp);
+            winSpeed.setText("Wind speed: " + windSpeed);
 
         }
 

@@ -41,7 +41,7 @@ public class LoginActivity extends Activity {
 
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        mEmailView = (EditText) findViewById(R.id.email);
+        mEmailView = findViewById(R.id.email);
 
        mEmailView.setText(sharedPref.getString("DefaultEmail", "none@none.com"));
     }

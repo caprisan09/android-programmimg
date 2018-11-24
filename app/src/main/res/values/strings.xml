@@ -15,4 +15,9 @@
     <string name="cancel">Cancel</string>
     <string name="btnText">Start Chat</string>
     <string name="sendText">Send</string>
+    <string name="minTemp">Minimum Temp</string>
+    <string name="maxTemp">Maximum Temp</string>
+    <string name="currentTemp">Current Temp</string>
+    <string name="windSpeed">Wind Speed</string>
+
 </resources>

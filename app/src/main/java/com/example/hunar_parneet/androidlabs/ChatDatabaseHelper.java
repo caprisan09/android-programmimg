@@ -10,7 +10,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     protected static final String ACTIVITY_NAME = "ChatDatabaseHelper";
 
     private static String DATABASE_NAME = "Messages.db";
-    private static int VERSION_NUM = 2;
+    private static int VERSION_NUM = 3;
     public static final String TABLE_NAME = "INFO";
     public static final String COL_MESSAGE = "KEY_MESSAGE";
     public static final String COL_ID = "KEY_ID";
@@ -31,6 +31,6 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME); //delete current table
         onCreate(db);
-        Log.i(ACTIVITY_NAME, "Calling onCreate, oldVersion = "+oldVersion+"newVersion = "+newVersion);
+        Log.i(ACTIVITY_NAME, "Calling onCreate, oldVersion = "+oldVersion+" newVersion = "+newVersion);
     }
 }

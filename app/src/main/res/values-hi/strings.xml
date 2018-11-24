@@ -16,4 +16,8 @@
     <string name="ok">main raazi hoon</string>
     <string name="cancel">barkhast karo</string>
     <string name="sendText">jaldi bhejo</string>
+    <string name="minTemp">mausam</string>
+    <string name="maxTemp">garam mausam</string>
+    <string name="currentTemp">abhi mausam</string>
+    <string name="windSpeed">hava ka flow</string>
 </resources>
