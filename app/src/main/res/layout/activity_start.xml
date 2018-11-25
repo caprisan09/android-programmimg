@@ -31,5 +31,10 @@
         android:layout_height="wrap_content"
         android:text="Weather Today"
         android:id="@+id/weatherBtn"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Toolbar"
+        android:id="@+id/test_toolbar"/>
 
 </LinearLayout>

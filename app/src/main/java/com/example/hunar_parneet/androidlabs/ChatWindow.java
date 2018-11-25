@@ -166,15 +166,7 @@ public class ChatWindow extends Activity {
 
         Log.i(ACTIVITY_NAME, "I am in the deleteMessage function");
         /*update your array list for both message and database id*/
-        /*chatID.remove(id);
-        chatDump.remove(id);*/
-        //chatDump.remove(id);
-        //chatID.remove(id);
-        /*run a new database query and get a new Cursor object*/
-        //result = db.query(ChatDatabaseHelper.TABLE_NAME, new String[] {ChatDatabaseHelper.COL_ID, ChatDatabaseHelper.COL_MESSAGE},
-//                null, null, null,null, null, null );
-        /*update the list view*/
-        //chatDump.clear();
+
         chatList.clear();
         runQuery();
         messageAdapter.notifyDataSetChanged();

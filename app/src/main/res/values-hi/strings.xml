@@ -20,4 +20,11 @@
     <string name="maxTemp">garam mausam</string>
     <string name="currentTemp">abhi mausam</string>
     <string name="windSpeed">hava ka flow</string>
+    <string name="author_name">Lekhak: Hunardeep Sandhu\n Lab 08 da grade lain vaste bani</string>
+    <string name="app_title">Lab 08</string>
+    <string name="app_message">Aapka swagat hai!!</string>
+    <string name="current_msg">Aapne pheli vastu hasil karni chahi</string>
+    <string name="return_msg">Kya aap vapas jaana chahenge?</string>
+    <string name="return_title">Desh Nikala</string>
+    <string name="exit_app_message">Aap ne sahi chunav kiya hai</string>
 </resources>

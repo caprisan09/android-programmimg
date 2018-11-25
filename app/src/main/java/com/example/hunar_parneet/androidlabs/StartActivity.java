@@ -27,6 +27,14 @@ public class StartActivity extends Activity {
                 startActivityForResult(intent,50);
                 Log.i(ACTIVITY_NAME,"I am a button is clicked");
             }});
+        final Button toolbarButton = findViewById(R.id.test_toolbar);
+        toolbarButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent intent = new Intent(StartActivity.this, TestToolbar.class);
+                startActivityForResult(intent,57);
+                Log.i(ACTIVITY_NAME,"Test toolbar button is clicked");
+            }});
         final Button chatButton = findViewById(R.id.chatBtn);
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override

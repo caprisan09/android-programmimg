@@ -19,5 +19,13 @@
     <string name="maxTemp">Maximum Temp</string>
     <string name="currentTemp">Current Temp</string>
     <string name="windSpeed">Wind Speed</string>
+    <string name="author_name">Author: Hunardeep Sandhu\n This is towards Lab08 grade</string>
+    <string name="app_title">Lab 08</string>
+    <string name="app_message">Welcome to my application</string>
+    <string name="current_msg">You have selected Item 1</string>
+    <string name="return_msg">Do you wanna go back?</string>
+    <string name="return_title">Exit Dialog</string>
+    <string name="exit_app_message">You decided to stay on this page</string>
+
 
 </resources>
